@@ -1,9 +1,10 @@
-// Example of routes/api.js
+// Get required packages
 const express = require('express');
 const router = express.Router();
 const { saveNoteData, getNotesData, saveNotes } = require('../db')
 const { v4 } = require('uuid');
 
+// Route to return all notes
 router.get('/notes', async (req, res) => {
     const notes = await getNotesData();
     if(notes){
@@ -17,12 +18,11 @@ router.get('/notes', async (req, res) => {
 
 })
 
+// Route to add new note
 router.post('/notes', async (req, res) => {
-
     const note = req.body;
-
     if(note){
-
+        // give id to note
         note.id = v4();
 
         await saveNoteData(note); 
@@ -38,17 +38,16 @@ router.post('/notes', async (req, res) => {
     })
 })
 
+// Route to delete note
 router.delete('/notes/:id', async (req, res) => {
     const notes = await getNotesData();
 
     const note_id = req.params.id;
 
+    // remove note from notes data
     const filteredNotes = notes.filter(noteObj => noteObj.id !== note_id);
 
     saveNotes(filteredNotes);
-    
-
-
 })
-// Export the router
+
 module.exports = router;
