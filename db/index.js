@@ -24,7 +24,6 @@ async function saveNotes(notes){
     await fs.promises.writeFile(DB_PATH, JSON.stringify(notes, 2));
 }
 
-
 module.exports = {
     saveNoteData,
     getNotesData,
