@@ -19,9 +19,9 @@
   
   VIEW HERE: [https://note-taker-c453.onrender.com/notes/](https://note-taker-c453.onrender.com/notes/)
 
-  ## Usage
+  ## Mockup
   
-  ![]('./public/assets/images/search-thing.gif')
+  ![]('public/assets/images/search-thing.gif')
   
   ## Credits
   
