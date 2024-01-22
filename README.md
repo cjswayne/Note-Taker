@@ -21,7 +21,8 @@
 
   ## Usage
   
-  ![]('/public/assets/images/search-thing.gif')
+
+  ![](public/assets/images/search_thing.gif)
   
   ## Credits
   
