@@ -1,18 +1,22 @@
 // Example of routes/api.js
 const express = require('express');
 const router = express.Router();
+const { saveNoteData, getNotesData } = require('../db')
 
-router.get('/api/notes', (req, res) => {
-    res.sendFile(path.join(__dirname, './db/db.json'))
+
+router.get('/notes', async (req, res) => {
+    const notes = await getNotesData();
+    res.send(notes)
 })
 
-router.post('/api/notes', (req, res) => {
+router.post('/notes', (req, res) => {
 
     const note = req.body;
 
-    // DB.saveNoteData(note); 
+    saveNoteData(note); 
 
-    // console.log('Saved')
+    res.send('User Added')
+
 })
 
 // Export the router

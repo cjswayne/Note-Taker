@@ -1,18 +1,1 @@
-[
-  {
-    "title": "Test Title",
-    "text": "Test text"
-  },
-  {
-    "title": "dw",
-    "text": "wda"
-  },
-  {
-    "title": "as",
-    "text": "asc"
-  },
-  {
-    "title": "sdg",
-    "text": "sdv"
-  }
-]
+{"title":"Test Title","text":"Test text"}

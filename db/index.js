@@ -1,22 +1,20 @@
 const fs = require('fs');
-class DB {
-    static saveNoteData(note){
+const path = require('path');
+const DB_PATH = path.join(__dirname, './db.json')
+async function saveNoteData(noteObj) {
+    console.log(noteObj);
 
-        console.log(note.title, note.text);
-
-        fs.readFile('./db/db.json', 'utf8', (err, data) => {
-            if(err) return console.log(err);
-
-            const db = JSON.parse(data);
-            db.push(note);
-
-            fs.writeFile('./db/db.json', JSON.stringify(db, null, 2), 'utf8', (err)=> {
-                if(err) return console.log(err);
-
-                console.log('Saved')
-            })
-        })
-    }
+    // const notes = await fs.promises.writeFile(DB_PATH, JSON.stringify(noteObj, 2));
+    // return JSON.parse(notes);
 }
 
-module.exports = DB;
+async function getNotesData(){
+    const notes = await fs.promises.readFile(DB_PATH, 'utf-8');
+    return JSON.parse(notes);
+}
+
+
+module.exports = {
+    saveNoteData,
+    getNotesData
+};
