@@ -31,9 +31,10 @@ body {
 }
 
 .note-title {
-  height: 50px;
+  height: fit-content;
   margin-top: 13px;
   font-size: 3rem;
+  overflow:visible;
 }
 
 .note-title:read-only,
